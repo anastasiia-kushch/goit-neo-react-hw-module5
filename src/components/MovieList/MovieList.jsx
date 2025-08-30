@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import css from '../MovieList/MovieList.module.css';
 import StarRating from '../StarRating/StarRating';
-import ScrollToTop from 'react-scroll-up';
+import ScrollToTop from 'react-scroll-to-top';
 
 export default function MovieList({ films }) {
   const location = useLocation();
@@ -9,26 +9,26 @@ export default function MovieList({ films }) {
   return (
     <div>
       <ScrollToTop
-        showUnder={100}
+        smooth
         style={{
-          backgroundColor: '#2a2724ca',
-          color: '#ffffff',
+          backgroundColor: '#ffb300cd',
+          color: '#2a2724ca',
           borderRadius: '50%',
-          width: '40px',
-          height: '40px',
-          lineHeight: '40px',
+          width: '50px',
+          height: '50px',
+          lineHeight: '50px',
           textAlign: 'center',
           margin: '0px',
           bottom: '14px',
           right: '14px',
+          fontSize: '16px',
         }}
-      >
-        <span>UP</span>
-      </ScrollToTop>
-      <ul className={css.ul}>
+        component={<span>UP</span>}
+      />
+      <ul className={css.list}>
         {films.map((film) => {
           return (
-            <li key={film.id} className={css.li}>
+            <li key={film.id} className={css.item}>
               <Link
                 to={`/movies/${film.id}`}
                 state={location}
@@ -40,7 +40,7 @@ export default function MovieList({ films }) {
                       film.backdrop_path || film.poster_path
                     }`}
                     alt={film.title}
-                    className={css.img}
+                    className={css.image}
                   />
                 }
 

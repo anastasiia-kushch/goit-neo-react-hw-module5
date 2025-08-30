@@ -1,16 +1,17 @@
-.img {
+.image {
   width: 360px;
   height: 206px;
   object-fit: cover;
 }
 
-.ul {
+.list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
 }
 
-.li {
+
+.item {
   border: 0.8px solid #363636da;
   border-radius: 4px;
   width: 320px;
@@ -33,7 +34,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .ul {
+  .list {
     display: flex;
     flex-direction: row;
     gap: 12px;
@@ -41,29 +42,29 @@
     justify-content: center;
   }
 
-  .li {
+  .item {
     width: 359px;
   }
-  .img {
+  .image {
     width: 359px;
     object-fit: cover;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .ul {
+  .list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
   }
 
-  .img {
+  .image {
     width: 340px;
     object-fit: cover;
   }
 
-  .li {
+  .item {
     width: 340px;
   }
 }

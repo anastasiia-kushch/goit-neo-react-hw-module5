@@ -7,7 +7,7 @@ export default function Loader() {
       <RiseLoader
         color={'#efcc42'}
         loading={true}
-        size={150}
+        size={20}
         aria-label="Loading Spinner"
         data-testid="loader"
       />
